@@ -351,6 +351,107 @@ p {
   gap: 18px;
 }
 
+.architecture-diagram {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 110px minmax(320px, 1.2fr) 140px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(73, 211, 200, 0.09), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01)),
+    var(--panel);
+}
+
+.diagram-column,
+.diagram-center {
+  display: grid;
+  gap: 14px;
+}
+
+.diagram-group {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.diagram-group-featured {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(77, 123, 255, 0.16), transparent 35%),
+    rgba(255, 255, 255, 0.04);
+  border-color: rgba(73, 211, 200, 0.2);
+}
+
+.diagram-title {
+  color: var(--teal);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.diagram-stack {
+  display: grid;
+  gap: 10px;
+}
+
+.diagram-node {
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(7, 12, 28, 0.45);
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.diagram-node small {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.diagram-node-primary {
+  border-color: rgba(73, 211, 200, 0.26);
+  box-shadow: inset 0 0 0 1px rgba(73, 211, 200, 0.08);
+}
+
+.diagram-link-column {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.diagram-link,
+.diagram-inline-link span:first-child {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.diagram-arrow {
+  color: var(--teal);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.diagram-inline-link {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 2px 0;
+  color: var(--muted);
+}
+
 .macro-column {
   position: relative;
   overflow: hidden;
@@ -518,6 +619,17 @@ code {
 }
 
 @media (max-width: 1120px) {
+  .architecture-diagram {
+    grid-template-columns: 1fr;
+  }
+
+  .diagram-link-column,
+  .diagram-inline-link {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .pattern-grid,
   .sap-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -324,6 +324,67 @@ export default function Home() {
             </p>
           </div>
 
+          <div className="architecture-diagram panel" aria-label="Diagrama de arquitectura side-by-side">
+            <div className="diagram-column">
+              <article className="diagram-group">
+                <span className="diagram-title">Dominio clinico</span>
+                <div className="diagram-stack">
+                  <div className="diagram-node">TrakCare</div>
+                  <div className="diagram-node">LIS / RIS / Vademecum / otros terceros</div>
+                </div>
+              </article>
+            </div>
+
+            <div className="diagram-link-column" aria-hidden="true">
+              <span className="diagram-link">Integracion clinica</span>
+              <span className="diagram-arrow">↔</span>
+            </div>
+
+            <div className="diagram-column diagram-center">
+              <article className="diagram-group diagram-group-featured">
+                <span className="diagram-title">Capa de interoperabilidad</span>
+                <div className="diagram-stack">
+                  <div className="diagram-node diagram-node-primary">
+                    InterSystems Health Connect
+                    <small>+ IRIS for Health</small>
+                  </div>
+                  <div className="diagram-node">Identidad paciente / MPI</div>
+                  <div className="diagram-node">Transformacion HL7 v2 / FHIR / XML / JSON</div>
+                  <div className="diagram-node">Orquestacion / reglas / auditoria</div>
+                </div>
+              </article>
+            </div>
+
+            <div className="diagram-link-column" aria-hidden="true">
+              <span className="diagram-link">RFC / BAPI / IDoc via JCo</span>
+              <span className="diagram-arrow">↔</span>
+            </div>
+
+            <div className="diagram-column">
+              <article className="diagram-group">
+                <span className="diagram-title">SAP legado / transicion</span>
+                <div className="diagram-stack">
+                  <div className="diagram-node">ECC + IS-H</div>
+                </div>
+              </article>
+
+              <div className="diagram-inline-link" aria-hidden="true">
+                <span>IDoc / RFC de negocio</span>
+                <span className="diagram-arrow">↔</span>
+              </div>
+
+              <article className="diagram-group">
+                <span className="diagram-title">SAP destino</span>
+                <div className="diagram-stack">
+                  <div className="diagram-node">
+                    S/4HANA
+                    <small>FI / CO / MM / SD / BP</small>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
           <div className="macro-layout">
             <article className="macro-column panel">
               <span className="macro-label">Dominio clinico</span>
